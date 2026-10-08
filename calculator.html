@@ -10,11 +10,12 @@
 <body>
 
     <p>簡易電卓</p>
-    <p><span id="result"></span></p>
+    <p><span id="formula"></span></p>
     <p>
         <button class="num">1</button>
         <button class="num">2</button>
         <button class="num">3</button>
+        <button id="clear">C</button>
     </p>
     <p>
         <button class="num">4</button>
@@ -25,8 +26,18 @@
         <button class="num">7</button>
         <button class="num">8</button>
         <button class="num">9</button>
+        <button class="num">0</button>
     </p>
-    <p><button id="calculator">足す</button></p>
+
+    <p>
+        <button class="arithmetic" data-type="add">+</button>
+        <button class="arithmetic" data-type="subtract">-</button>
+        <button class="arithmetic" data-type="multiply">×</button>
+        <button class="arithmetic" data-type="divide">÷</button>
+        <button class="arithmetic" data-type="equals">=</button>
+    </p>
+
+    <p><span id="result">計算結果</span></p>
     
     <p><a href="index.html">ホームページ</a></p>
     
