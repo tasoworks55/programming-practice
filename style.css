@@ -1,0 +1,32 @@
+/* 
+background-color:
+font-size:
+text-align:
+border:
+padding:
+width: */
+
+body {
+  background-color: rgb(244, 255, 213);
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    text-align: center;
+    border: 1px solid black;
+    width: 500px;
+}
+h2 {
+    
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+    width: 180px;
+}
+p {
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
