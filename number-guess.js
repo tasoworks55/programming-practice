@@ -5,13 +5,14 @@ let tryCount = document.getElementById("tryCount");
 
 console.log(answer);
 
+let guessNum = document.getElementById('guess');
 
 const difficultyButton = document.querySelectorAll(".difficultyButton");
 let difficultyLevel = document.getElementById("difficultyLevel");
 
 button1.addEventListener("click", function() {
     
-    let guessNum = document.getElementById('guess');
+    // let guessNum = document.getElementById('guess');
 
     tryCount.textContent = Number(tryCount.textContent) + 1; //試行回数
 
@@ -29,14 +30,18 @@ button1.addEventListener("click", function() {
 
 difficultyButton.forEach((button) => {
     button.addEventListener("click", () => {
-        difficultyLevel.textContent = (button.textContent)
+        
         if(button.textContent == ("Easy")) {
             answer = Math.floor(Math.random() * 100) + 1;
+            difficultyLevel.textContent = (button.textContent + ("(1~100)"))
         }else if(button.textContent == ("Medium")) {
             answer = Math.floor(Math.random() * 1000) + 1;
+            difficultyLevel.textContent = (button.textContent + ("(1~1000)"))
         }else {
             answer = Math.floor(Math.random() * 10000) + 1;
+            difficultyLevel.textContent = (button.textContent + ("(1~10000)"))
         }
+        guessNum.value = 0;
         tryCount.textContent = 0;
         console.log(answer);
     });
