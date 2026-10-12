@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(200, 255, 216);
+}
+
+#title-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+h1 {
+    
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 50%;
+    font-size: 70px;
+}
+
+#cardArea {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 50%;
+    width: 600px;
+    height: 400px;
+    background-color: lightblue;
+    gap: 8px;
+     justify-content: center;
+}
+
+#cardArea button {
+  width: 60px;
+  height: 80px;
+  font-size: 24px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  /* cursor: pointer; */
+}
+
+#cardArea button[data-state="closed"] {
+  background-color: #3b82f6;
+  color: transparent; /* 数字を隠す */
+}
+
+#cardArea button[data-state="open"] {
+  background-color: #ffffff;
+  color: #111;
+}

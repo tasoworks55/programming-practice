@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(200, 255, 216);
+}
+
+
+#gameStart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;  /* 横幅 */
+    height: 80px;  /* 高さ */
+    font-size: 24px;
+}
+
+#home-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+h1 {
+    
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 50%;
+    font-size: 70px;
+}
