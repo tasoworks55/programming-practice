@@ -1,10 +1,11 @@
 startGame();
 let flippedCards = [];
+let isChecking = false;
 
 function startGame() {
     // let cardTypeCount = 8;//二乗
-    let rows = 3; //縦
-    let cols = 4; //横
+    let rows = 5; //縦
+    let cols = 6; //横
     let cardTypeCount = rows * cols / 2;
 
 
@@ -65,18 +66,44 @@ function drawCards(_rows,_cols,_cards){
 }
 
 function flipCard(_card, value) {
-    if(_card.textContent != "?") return;
-    if(flippedCards.length == 2){
-        flippedCards = [];
-        flipCardsBack(_card)
-        return;
-    } 
+    if(isChecking) return; //カードを元に戻すまで
+    if(_card.textContent != "?") return; //すでに表のカードをクリックしたとき
     _card.dataset.state = "open";
     _card.textContent = value;
+    flippedCards.push(_card);
+    if(flippedCards.length == 2) {
+        isChecking = true;
+        if(isMatched(flippedCards)) {
+            flippedCards = [];
+            isChecking = false;
+            return;
+        }
+    
+        setTimeout(() => {
+            isChecking = false;
+            flipCardsBack();
+            flippedCards = [];
+        }, 500);
+    }
 
-    flippedCards = value;
 }
 
-function flipCardsBack(_card) {
+function flipCardsBack() {
+    flippedCards.forEach((card) => {
+        card.dataset.state = "closed";
+        card.textContent = "?";
+    });
+}   
 
+function isMatched(_flippedCards) {
+    anser = false;
+    firstCardNum = _flippedCards[0].textContent;
+    SecondCardNum = _flippedCards[1].textContent;
+    if(firstCardNum === SecondCardNum) {
+        anser = true;
+        console.log("seikai")
+    }
+
+
+    return anser;
 }
